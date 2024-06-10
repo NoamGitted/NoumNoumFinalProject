@@ -1,0 +1,502 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="BigusProjectus.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+
+        td {
+            border: solid 5px black;
+        }
+        
+    .ball1{
+    position:absolute;left:25px;top:20px;
+    z-index:3;
+
+
+
+}
+ .dball1{
+    position:absolute;left:-0.0555px;top:-5px;
+    z-index:3;
+
+
+
+}
+
+ .ring1{ 
+     
+     position:absolute;left:7px; top:-6px;
+              z-index:2;}
+
+
+      .ball2{
+    position:absolute;left:150px;top:20px;
+    z-index:3;
+
+
+
+}
+ .dball2{
+    position:absolute;left:125px;top:-5px;
+    z-index:3;
+
+
+
+}
+
+ .ring2{ 
+     
+     position:absolute;left:132px; top:-6px;
+              z-index:2;}
+
+
+
+
+    .ball3{
+      position:absolute;left:275px;top:20px;
+    z-index:3;
+
+
+
+}
+ .dball3{
+    position:absolute;left:250px;top:-5px;
+    z-index:3;
+
+
+
+}
+
+ .ring3{ 
+     
+     position:absolute;left:257px; top:-6px;
+              z-index:2;}
+
+
+
+
+
+
+        .ball4{
+      position:absolute;left:400px;top:20px;
+    z-index:3;
+
+
+
+}
+
+
+        .dball4{
+    position:absolute;left:375px;top:-5px;
+    z-index:3;
+
+
+         
+        }
+
+ .ring4{ 
+     
+     position:absolute;left:382px; top:-6px;
+              z-index:2;}
+
+
+
+
+      .ball5{
+      position:absolute;left:525px;top:20px;
+    z-index:3;
+
+
+
+}
+
+
+        .dball5{
+    position:absolute;left:525px;top:20px;
+    z-index:3;
+
+
+         
+        }
+
+ .ring5{ 
+     
+     position:absolute;left:507px; top:-6px;
+              z-index:2;}
+
+
+
+
+
+
+
+
+
+      .ball6{
+      position:absolute;left:650px;top:20px;
+    z-index:3;
+
+
+
+}
+
+
+        .dball6{
+    position:absolute;left:650px;top:20px;
+    z-index:3;
+
+
+         
+        }
+
+ .ring6{ 
+     
+     position:absolute;left:632px; top:-6px;
+
+
+
+
+
+              z-index:2;}
+
+
+
+
+
+
+
+
+
+      .ball7{
+      position:absolute;left:775px;top:20px;
+    z-index:3;
+
+
+
+}
+
+
+        .dball7{
+    position:absolute;left:775px;top:20px;
+    z-index:3;
+
+
+         
+        }
+
+ .ring7{ 
+     
+     position:absolute;left:757px; top:-6px;
+              z-index:2;}
+
+
+
+
+ 
+body{
+        background: linear-gradient(0deg, rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+
+    }
+
+ </style>
+   
+</head>
+<body onload="isGrabbed()">
+             
+            
+        <div>
+            <table>
+                <tr>
+                    <td>
+                       <br />
+                       <br />
+                       <br />
+                       <br />
+                       <br />
+                       <br />
+                        <img src="Images/Dragon_Ball_1.png" id="dballOne" onmouseenter="ballOneSelected()" onmouseout="ballOneUnselected()"" class="dball1" hidden="hidden"/>
+                        <img src="Images/Just_Ring.png" id="ringOne" class="ring1" hidden="hidden"/>
+                    <a href="WebForm1.aspx">  <img src="Images/Gray_Ball%20(1).png" id="ballOne" onmouseover="ballOneSelected()" onmouseout="ballOneUnselected()"" class="ball1"  /> </a>
+
+
+
+                                                    <img src="Images/Dragon_Ball_2.png" id="dball2" onmouseenter="ballTwoSelected()" onmouseout="ballTwoUnselected()"" class="dball2" hidden="hidden" />
+    <img src="Images/Just_Ring.png" id="ring2" class="ring2" hidden="hidden"/>
+<a href="WebForm2.aspx">  <img src="Images/Gray_Ball_2.png" id="ball2" onmouseover="ballTwoSelected()" onmouseout="ballTwoUnselected()"" class="ball2"  /> </a>
+
+
+
+                                                                         <img src="Images/Dragon_Ball_3.png" id="dball3" onmouseenter="ball3Selected()" onmouseout="ball3Unselected()"" class="dball3" hidden="hidden" />
+    <img src="Images/Just_Ring.png" id="ring3" class="ring3" hidden="hidden"/>
+<a href="WebForm3.aspx">  <img src="Images/Gray_Ball_3.png" id="ball3" onmouseover="ball3Selected()" onmouseout="ball3Unselected()"" class="ball3"  /> </a>
+
+
+                        
+                                          <img src="Images/Dragon_Ball_4.png" id="dball4" onmouseenter="ball4Selected()" onmouseout="ball4Unselected()" style="position:absolute;left:400px;top:20px;
+z-index:3;"  hidden="hidden"  />
+    <img src="Images/Just_Ring.png" id="ring4" class="ring4" hidden="hidden"/>
+<a href="WebForm4.aspx">  <img src="Images/Gray_Ball_4.png" id="ball4" onmouseover="ball4Selected()" onmouseout="ball4Unselected()" class="ball4"  /> </a>
+
+
+
+
+                        
+                        
+                                          <img src="Images/Dragon_Ball_5.png" id="dball5" onmouseenter="ball5Selected()" onmouseout="ball5Unselected()" class="dball5"  hidden="hidden"  />
+    <img src="Images/Just_Ring.png" id="ring5" class="ring5" hidden="hidden"/>
+<a href="WebForm6.aspx">  <img src="Images/Gray_Ball_5.png" id="ball5" onmouseover="ball5Selected()" onmouseout="ball5Unselected()" class="ball5"  /> </a>
+
+
+                        
+                        
+                                          <img src="Images/Dragon_Ball_6.png" id="dball6" onmouseenter="ball6Selected()" onmouseout="ball6Unselected()" class="dball6"  hidden="hidden"  />
+    <img src="Images/Just_Ring.png" id="ring6" class="ring6" hidden="hidden"/>
+<a href="WebForm7.aspx">  <img src="Images/Gray_Ball_6.png" id="ball6" onmouseover="ball6Selected()" onmouseout="ball6Unselected()" class="ball6"  /> </a>
+
+
+
+  
+                           <img src="Images/Dragon_Ball_7.png" id="dball7" onmouseenter="ball7Selected()" onmouseout="ball7Unselected()" class="dball7"  hidden="hidden"  />
+    <img src="Images/Just_Ring.png" id="ring7" class="ring7" hidden="hidden"/>
+<a href="WebForm8.aspx">  <img src="Images/Gray_Ball_7.png" id="ball7" onmouseover="ball7Selected()" onmouseout="ball7Unselected()" class="ball7"  /> </a>
+
+                        
+                        
+                        
+                    </td>
+                    <td> <button onclick="canBeSummoned()">Summon</button></td>
+
+                </tr>
+                <tr>
+                    <td><asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder></td>
+
+                </tr>
+
+            </table>
+
+
+           
+        </div>
+
+    <script>
+        
+
+
+        function ballOneSelected() {
+            document.getElementById("ringOne").hidden = false;
+
+        }
+        function ballOneUnselected() {
+            document.getElementById("ringOne").hidden = true;
+
+
+        }
+
+
+        function ballTwoSelected() {
+            document.getElementById("ring2").hidden = false;
+
+        }
+        function ballTwoUnselected() {
+            document.getElementById("ring2").hidden = true;
+
+
+        }
+
+        function ball3Selected() {
+            document.getElementById("ring3").hidden = false;
+
+        }
+        function ball3Unselected() {
+            document.getElementById("ring3").hidden = true;
+
+
+        }
+
+
+        function ball4Selected() {
+            document.getElementById("ring4").hidden = false;
+
+        }
+        function ball4Unselected() {
+            document.getElementById("ring4").hidden = true;
+
+
+        }
+
+
+
+
+        function ball5Selected() {
+            document.getElementById("ring5").hidden = false;
+
+        }
+        function ball5Unselected() {
+            document.getElementById("ring5").hidden = true;
+
+
+        }
+
+
+
+        function ball6Selected() {
+            document.getElementById("ring6").hidden = false;
+
+        }
+        function ball6Unselected() {
+            document.getElementById("ring6").hidden = true;
+
+
+        }
+
+
+
+        function ball7Selected() {
+            document.getElementById("ring7").hidden = false;
+
+        }
+        function ball7Unselected() {
+            document.getElementById("ring7").hidden = true;
+
+
+        }
+
+
+        function ballOneLocated() {
+            sessionStorage.setItem("ball1", "true");
+            document.getElementById('ballOne').hidden = true;
+            document.getElementById('dballOne').hidden = false;
+
+
+        }
+
+        function ballTwoLocated() {
+            sessionStorage.setItem("ball2", "true");
+            document.getElementById('ball2').hidden = true;
+            document.getElementById('dball2').hidden = false;
+
+
+        }
+
+        function ball3Located() {
+            sessionStorage.setItem("ball3", "true");
+            document.getElementById('ball3').hidden = true;
+            document.getElementById('dball3').hidden = false;
+
+
+        }
+
+
+        function ball4Located() {
+            sessionStorage.setItem("ball4", "true");
+            document.getElementById('ball4').hidden = true;
+            document.getElementById('dball4').hidden = false;
+
+
+        }
+
+
+
+        function ball5Located() {
+            sessionStorage.setItem("ball5", "true");
+            document.getElementById('ball5').hidden = true;
+            document.getElementById('dball5').hidden = false;
+
+
+        }
+
+
+
+        function ball6Located() {
+            sessionStorage.setItem("ball6", "true");
+            document.getElementById('ball6').hidden = true;
+            document.getElementById('dball6').hidden = false;
+
+
+        }
+
+
+
+        function ball7Located() {
+            sessionStorage.setItem("ball7", "true");
+            document.getElementById('ball7').hidden = true;
+            document.getElementById('dball7').hidden = false;
+
+
+        }
+
+        function isGrabbed() {
+           
+            if (sessionStorage.getItem("ball1") === "true") {
+
+
+                ballOneLocated();
+
+            }
+
+            if (sessionStorage.getItem("ball2") === "true") {
+
+
+                ballTwoLocated();
+
+            }
+            if (sessionStorage.getItem("ball3") === "true") {
+
+
+                ball3Located();
+
+            }
+        }
+        if (sessionStorage.getItem("ball4") === "true") {
+
+
+            ball4Located();
+
+        }
+
+
+        if (sessionStorage.getItem("ball5") === "true") {
+
+
+            ball5Located();
+
+        }
+
+
+        if (sessionStorage.getItem("ball6") === "true") {
+
+
+            ball6Located();
+
+        }
+
+
+        if (sessionStorage.getItem("ball7") === "true") {
+
+
+            ball7Located();
+
+        }
+
+        function canBeSummoned() {
+            if (sessionStorage.getItem("ball1") === "true" && (sessionStorage.getItem("ball2") === "true") && (sessionStorage.getItem("ball3") === "true") && (sessionStorage.getItem("ball4") === "true") && (sessionStorage.getItem("ball5") === "true") && (sessionStorage.getItem("ball6") === "true") && (sessionStorage.getItem("ball7") === "true")) {
+
+                window.location.href = "Summoned.aspx";
+            }
+            else {
+                alert("Not enough balls.")
+
+               
+            }
+        }
+
+    </script>
+   
+</body>
+</html>
